@@ -1,11 +1,5 @@
 
 
-import dotenv from 'dotenv';
-
-dotenv.config();// chrome.runtime.onStartup.addListener( () => {
-//     console.log(`onStartup()`);
-// });
-
 console.log("service worker runs")
 
 
@@ -53,7 +47,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         method: 'POST', // Specify the request method
         headers: {
         'Content-Type': 'application/json', // Set the request headers
-        'Authorization': `Bearer ${process.env.OPEN_AI_API_KEY}` // Add other headers if needed
+        'Authorization': `Bearer OPEN_AI_API_KEY` // Add other headers if needed
         },
         body: JSON.stringify(data) // Convert the data object to a JSON string for the body
     })

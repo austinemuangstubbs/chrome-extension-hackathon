@@ -8,10 +8,32 @@
 
     
     chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-          
-              console.log(message.summary);
 
-              textSummary.innerHTML = message.summary;
+
+        if(message.serviceWorkertoPopup===true){
+            console.log("incoming message on popup: ", message)
+            console.log(message.summary);
+
+            textSummary.innerHTML = message.summary;
+        }
+           
+    });
+
+
+
+    const contentMessageKey = {
+        key: "content",
+        value: "1234"
+    }
+
+    chrome.runtime.sendMessage(contentMessageKey, (response) => {
+        console.log("sending messagekey to messagebus from popup", contentMessageKey)
+        // 3. Got an asynchronous response with the data from the service worker
+    
+    
+        
+        // console.log('received user data', response);
+        // initializeUI(response);
     });
 
     // chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {

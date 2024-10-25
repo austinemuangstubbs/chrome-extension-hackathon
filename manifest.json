@@ -10,5 +10,11 @@
     "service_worker": "service-worker.js"
   },
 
-  "permissions": ["scripting", "activeTab", "storage"]
+  "permissions": ["scripting", "activeTab", "storage", "tabs","nativeMessaging"],
+  "content_scripts": [
+   {
+     "matches": ["https://*.wikipedia.org/*"],
+     "js": ["content.js"]
+   }
+ ]
 }

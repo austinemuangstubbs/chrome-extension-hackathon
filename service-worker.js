@@ -1,4 +1,4 @@
-
+// import library to inject env variables
 
 console.log("service worker runs")
 
@@ -68,7 +68,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
             method: 'POST', // Specify the request method
             headers: {
             'Content-Type': 'application/json', // Set the request headers
-            'Authorization': `Bearer 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` // Add other headers if needed
+            'Authorization': `Bearer Open_AI_API_KEY` // Add other headers if needed
             },
             body: JSON.stringify(data) // Convert the data object to a JSON string for the body
         })

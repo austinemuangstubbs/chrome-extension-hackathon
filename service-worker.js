@@ -51,7 +51,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
             method: 'POST', // Specify the request method
             headers: {
             'Content-Type': 'application/json', // Set the request headers
-            'Authorization': `Bearer Open_AI_API_KEY` // Add other headers if needed
+            'Authorization': `Bearer OPEN_AI_API_KEY` // Add other headers if needed
             },
             body: JSON.stringify(data) // Convert the data object to a JSON string for the body
         })

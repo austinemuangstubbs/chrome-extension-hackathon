@@ -1,10 +1,11 @@
 {
-  "name": "Hello Extensions",
-  "description": "Base Level Extension",
+  "name": "Too Long Didn't Read",
+  "description": "Briefly summarize a wikipedia page using ChatGPT",
   "version": "1.0",
   "manifest_version": 3,
   "action": {
-    "default_popup": "hello.html"
+    "default_popup": "hello.html",
+    "default_icon": "TLDR.png"
   },
   "background": {
     "service_worker": "service-worker.js",

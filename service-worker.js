@@ -1,24 +1,7 @@
-// import library to inject env variables
-
 console.log("service worker runs")
 
 
 
-
-// function reddenPage() {
-//     console.log("document")
-//     document.body.style.backgroundColor = 'red';
-//   }
-  
-//   chrome.action.onClicked.addListener((tab) => {
-//     console.log("inside event listener")
-//     if (!tab.url.includes('chrome://')) {
-//       chrome.scripting.executeScript({
-//         target: { tabId: tab.id },
-//         func: reddenPage
-//       });
-//     }
-//   });
 
 
 //* Listen for message sent from the browser with the wikipedia page (content.js)
@@ -87,11 +70,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
             chrome.runtime.sendMessage(messageObject, (response) => {
                 // 3. Got an asynchronous response with the data from the service worker
-            
-            
-                
-                // console.log('received user data', response);
-                // initializeUI(response);
             });
             
 
@@ -107,28 +85,10 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
 
     sendResponse("recieveduser");
-    // 2. A page requested user data, respond with a copy of `user`
 });
 
 
 
-// async function getCurrentTab() {
-//     console.log("getCurrentTab run")
-//     let queryOptions = { active: true, lastFocusedWindow: true };
-//     // `tab` will either be a `tabs.Tab` instance or `undefined`.
-//     let [tab] = await chrome.tabs.query(queryOptions);
-//     console.log(tab)
-//     return tab;
-// }
-
-// async function getTab() {
-//     let queryOptions = { active: true, currentWindow: true };
-//     let tabs = await chrome.tabs.query(queryOptions);
-//     console.log("tabs[0].url", tabs[0].url)
-//     return tabs[0].url;
-// }
-// getTab()
-// getCurrentTab()
 
 chrome.scripting
   .registerContentScripts([{
@@ -145,6 +105,3 @@ chrome.scripting
   })
   .catch((err) => console.warn("unexpected error", err))
 
-
-  //   const summaryContent = document.querySelector("#summaryText").innerText
-//   summaryContent = "Thing"
